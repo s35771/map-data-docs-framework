@@ -48,7 +48,9 @@ graph TD
     B -->|Missing Semantics| D[Dead Letter Queue]
     C --> E[(Edge Node Cache)]
     E --> F[Vehicle Client Request]
-```To respect the time of senior architects, I utilize asynchronous, highly targeted validation rather than broad discovery meetings:
+```
+
+To respect the time of senior architects, I utilize asynchronous, highly targeted validation rather than broad discovery meetings:
 
 1. **Red-Line Validation:** I provide a draft Mermaid.js architecture diagram and ask the engineer to correct it. (Engineers correct architecture diagrams faster than they write them).
 2. **Binary Questioning:** *"I noticed the Protobuf schema for lane geometry allows null values, but the downstream router code crashes on nulls. Is there a validation layer I am missing, or is this known tech debt?"*
