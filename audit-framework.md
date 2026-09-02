@@ -38,7 +38,17 @@ After reviewing the codebase, I map out discrepancies between legacy documentati
 ---
 
 ## 4. Phase 3: Targeted SME Interrogation
-To respect the time of senior architects, I utilize asynchronous, highly targeted validation rather than broad discovery meetings:
+### Example Architecture Output
+This is how I map out the pipeline after SME validation, using Docs-as-Code native rendering:
+
+```mermaid
+graph TD
+    A[Raw Map Data / GeoJSON] --> B{Schema Validator}
+    B -->|Valid| C[NDS.Live Tile Compiler]
+    B -->|Missing Semantics| D[Dead Letter Queue]
+    C --> E[(Edge Node Cache)]
+    E --> F[Vehicle Client Request]
+```To respect the time of senior architects, I utilize asynchronous, highly targeted validation rather than broad discovery meetings:
 
 1. **Red-Line Validation:** I provide a draft Mermaid.js architecture diagram and ask the engineer to correct it. (Engineers correct architecture diagrams faster than they write them).
 2. **Binary Questioning:** *"I noticed the Protobuf schema for lane geometry allows null values, but the downstream router code crashes on nulls. Is there a validation layer I am missing, or is this known tech debt?"*
