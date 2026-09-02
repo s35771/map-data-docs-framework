@@ -1,0 +1,17 @@
+{
+  "tile_id": "14-8734-5312",
+  "lane_segments": [
+    {
+      "segment_id": 10045,
+      "speed_limit_kph": 120,
+      "is_navigable": true,
+      "geometry": "LINESTRING(13.4049 52.5200, 13.4050 52.5205)"
+    },
+    {
+      "segment_id": 10046,
+      "speed_limit_kph": 80,
+      "is_navigable": false,
+      "geometry": "LINESTRING(13.4050 52.5205, 13.4055 52.5210)"
+    }
+  ]
+}
