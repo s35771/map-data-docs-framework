@@ -1,0 +1,28 @@
+{
+  "$id": "https://example.com/nds-lane-topology.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Lane Topology Semantic Layer",
+  "type": "object",
+  "properties": {
+    "tile_id": {
+      "type": "string",
+      "description": "Unique identifier for the 2km x 2km map tile."
+    },
+    "lane_segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "segment_id": { "type": "integer" },
+          "speed_limit_kph": { "type": "integer" },
+          "is_navigable": { "type": "boolean" },
+          "geometry": {
+            "type": "string",
+            "description": "WKT (Well-Known Text) representation of the lane centerline."
+          }
+        },
+        "required": ["segment_id", "geometry"]
+      }
+    }
+  }
+}
